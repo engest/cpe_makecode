@@ -2,7 +2,7 @@
 
 ## Introduction @unplugged
 Welcome to class! Today we are going to use block coding to turn our Circuit Playground Express into a motion alarm. 
-When someone bumps your device, it will flash red and sound a siren!
+When someone bumps your device, it will flash red and sound an alarm!
 
 ## Step 1: The Shake Trigger
 First, we need to tell the CPX to listen for movement. 
@@ -14,27 +14,26 @@ input.onGesture(Gesture.Shake, function () {
 })
 ```
 
-## Step 2: Sound the Alarm!
+## Step 2: Sound the Siren!
 Now, let's make some noise! 
-Open the **Music** drawer. Drag a `||music:play sound||` block and snap it inside your `||input:on shake||` block. 
-Click the sound dropdown and change it to "siren".
+Open the **Music** drawer. Drag the `||music:play sound ba ding||` block for the siren and snap it inside your `||input:on shake||` block. Select the `||siren||` sound.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
-    music.playSound(music.sounds(Sounds.Siren))
+    music.siren.play()
 })
 ```
 
 ## Step 3: Red Alert Lights
 An alarm needs flashing lights! 
 Open the **Light** drawer and drag a `||light:show ring||` block under your music block. 
-Click the grey center of the color wheel to turn all the lights red.
+Change the colors so all the lights are red.
 
 ```blocks
 input.onGesture(Gesture.Shake, function () {
-    music.playSound(music.sounds(Sounds.Siren))
+    music.siren.play()
     light.showRing(
-    `red red red red red red red red red red`
+    "red red red red red red red red red red"
     )
 })
 ```
@@ -53,4 +52,3 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
 ## Step 5: Test it out!
 Look at the virtual CPX simulator on the screen. Click the white "SHAKE" button to test your alarm, and click Button A to clear the lights.
 If it works, you are ready to download the code to your real Circuit Playground Express!
-https://makecode.adafruit.com/#tutorial:https://makecode.com/_W1HdDxb2643x
