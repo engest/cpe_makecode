@@ -53,3 +53,4 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
 ## Step 5: Test it out!
 Look at the virtual CPX simulator on the screen. Click the white "SHAKE" button to test your alarm, and click Button A to clear the lights.
 If it works, you are ready to download the code to your real Circuit Playground Express!
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_W1HdDxb2643x
