@@ -9,3 +9,8 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_8WJ3iJP5qW78
 
 ### Secred Drawer Alarm
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_MscKaiYMqPYD
+- Project worked through, JS generated, MD corrected.
+- TODO - link needs to be regenerated
+
+### Magic Wand
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_EuUb2uKCvcU9
