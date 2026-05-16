@@ -19,3 +19,5 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_EuUb2uKCvcU9
 
 ### Human Piano
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_CwoDoTgUDA1m
+- Project worked through, JS generated, MD corrected.
+- TODO - link needs to be regenerated
