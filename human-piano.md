@@ -1,19 +1,19 @@
 # The Human Piano
 
 ## Introduction @unplugged
-Let's make some music! The gold pads around the edge of your gadget can sense electricity in your body. We are going to program all **seven** of the touch pads to act like piano keys. By touching the different pins, you'll complete a circuit to play a full musical scale and trigger a rainbow of lights. You can even hold hands with friends to pass the current through a whole group of people!
+Let's make some music! The gold pads around the edge of your gadget can sense electricity in your body. We are going to program all **seven** of the touch pads to act like piano keys. By touching the different pins, you'll complete a circuit to play a full musical scale and trigger a rainbow of lights.
 
 ## Step 1: Program the First Key (A1)
-Go to the **INPUT** drawer and grab the `||input:on pin A1 pressed||` block. This acts just like a button, but it triggers when you touch the metal pad labeled A1.
+Go to the **INPUT** drawer and grab the `||input:on button A clicked||` block. Change "button A" to "touch A1". Change "click" to "down". This acts just like a button, but it triggers when you touch the metal pad labeled A1.
 
 ## Step 2: Add a Color
-Let's make our piano light up when played! Go to the **LIGHT** drawer and drag `||light:set all pixels to red||` into your block.
+Let's make our piano light up when played! Go to the **LIGHT** drawer and drag `||light:set all pixels to red||` into your `||input:on touch A1 down||` block.
 
 ## Step 3: Play a Note
 Go to the **MUSIC** drawer and grab `||music:play tone Middle C for 1/2 beat||`. Snap it right under the light block. 
 
 ## Step 4: Clear the Lights
-We want the light to turn off when the note finishes playing. Go to the **LIGHT** drawer, grab `||light:clear||`, and place it at the very bottom. 
+We want the light to turn off when the note finishes playing. Go to the **LIGHT** drawer, grab `||light:clear||`, and place it at the very bottom of your `||input:on touch A1 down||` block. 
 
 ## Step 5: Duplicate and Build the Pattern!
 Now that you have built the code for one key, you can see the pattern! You need to make this exact same block of code for pins **A2, A3, A4, A5, A6, and A7**. 
