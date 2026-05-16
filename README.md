@@ -14,3 +14,8 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_MscKaiYMqPYD
 
 ### Magic Wand
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_EuUb2uKCvcU9
+- Project worked through, JS generated, MD corrected.
+- TODO - link needs to be regenerated
+
+### Human Piano
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_CwoDoTgUDA1m
