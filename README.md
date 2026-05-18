@@ -8,9 +8,7 @@ motion-alarm.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_8WJ3iJP5qW78
 
 ### Secret Drawer Alarm
-https://makecode.adafruit.com/#tutorial:https://makecode.com/_MscKaiYMqPYD
-- Project worked through, JS generated, MD corrected.
-- TODO - link needs to be regenerated
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_Ds7H51dfgXs5
 
 ### Magic Wand
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_EuUb2uKCvcU9
