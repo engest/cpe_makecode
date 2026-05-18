@@ -16,6 +16,5 @@ magic-wand.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_gFH0y5eTveE5
 
 ### Human Piano
-https://makecode.adafruit.com/#tutorial:https://makecode.com/_CwoDoTgUDA1m
-- Project worked through, JS generated, MD corrected.
-- TODO - link needs to be regenerated
+human-piano.md
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_5Kr7vHYpLUvy
