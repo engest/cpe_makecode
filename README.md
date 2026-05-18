@@ -7,7 +7,7 @@ Circuit Playground Express tutorials and examples.
 motion-alarm.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_8WJ3iJP5qW78
 
-### Secred Drawer Alarm
+### Secret Drawer Alarm
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_MscKaiYMqPYD
 - Project worked through, JS generated, MD corrected.
 - TODO - link needs to be regenerated
