@@ -18,3 +18,11 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_gFH0y5eTveE5
 ### Human Piano
 human-piano.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_5Kr7vHYpLUvy
+
+### Digital Fortune Teller
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_6LY8E83kCUsL
+TODO: needs review
+
+### Gadget Step Tracker
+
+### The Secret Code Lock
