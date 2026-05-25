@@ -20,8 +20,7 @@ human-piano.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_5Kr7vHYpLUvy
 
 ### Digital Fortune Teller
-https://makecode.adafruit.com/#tutorial:https://makecode.com/_6LY8E83kCUsL
-TODO: needs review
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_MtxRDwJDH1C0
 
 ### Gadget Step Tracker
 

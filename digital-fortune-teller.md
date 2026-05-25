@@ -1,10 +1,10 @@
-# Digital Fortune Teller
+  # Digital Fortune Teller
 
 ## Introduction @unplugged
 Welcome back to the workshop! Have you ever used a Magic 8-Ball? Today, we are going to build our own digital Fortune Teller! To do this, we need to learn about **Variables** (a way for the computer to remember a number) and **Logic** (how a computer makes decisions). 
 
 ## Step 1: Create a Variable
-A variable is like a digital box where we can store information. 
+A variable is like a digital box where we can store information.
 Go to the **VARIABLES** drawer and click `Make a Variable`. Name your variable `fortune` and click OK. 
 
 ## Step 2: The Shake Trigger
@@ -25,7 +25,7 @@ Then, open the **MATH** drawer, grab the `||math:pick random 0 to 10||` block, a
 ```blocks
 let fortune = 0
 input.onGesture(Gesture.Shake, function () {
-    fortune = randint(1, 3)
+    fortune = Math.randomRange(1, 3)
 })
 ```
 
@@ -37,10 +37,10 @@ Click the **(+)** plus icon at the bottom of the block *once* to add an `else if
 ```blocks
 let fortune = 0
 input.onGesture(Gesture.Shake, function () {
-    fortune = randint(1, 3)
+    fortune = Math.randomRange(1, 3)
     if (true) {
     	
-    } else if (false) {
+    } else if (0 == 0) {
     	
     } else {
     	
@@ -56,7 +56,7 @@ Go to the **VARIABLES** drawer, grab the round `||variables:fortune||` block, an
 ```blocks
 let fortune = 0
 input.onGesture(Gesture.Shake, function () {
-    fortune = randint(1, 3)
+    fortune = Math.randomRange(1, 3)
     if (fortune == 1) {
     	
     } else if (fortune == 2) {
@@ -69,14 +69,14 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Step 6: Program the Fortunes!
 Now, fill in what happens for each number! 
-* **If it equals 1 (Good Fortune):** Add a green light ring and a happy sound.
-* **Else If it equals 2 (Bad Fortune):** Add a red light ring and a sad sound.
-* **Else (Mystery Fortune):** Add a yellow light ring and a magical sound. (The computer knows that if it isn't 1 or 2, it *must* be 3!)
+If it equals 1 (Good Fortune): Add a `||light:show ring||` from the **LIGHT** drawer to the if fortune = 1 block, select the color green from the inner color wheel, then click on all LEDs to set them all to green. Open the **SOUND** drawer and drag the `||music:play sound||` under the light wheel and set it to play a happy sound like "ba ding".
+Else If it equals 2 (Bad Fortune): Add a red light ring and a sad sound, like "wawawawaa".
+Else (Mystery Fortune): Add a yellow light ring and a magical sound like "magic wand". (The computer knows that if it isn't 1 or 2, it *must* be 3!)
 
 ```blocks
 let fortune = 0
 input.onGesture(Gesture.Shake, function () {
-    fortune = randint(1, 3)
+    fortune = Math.randomRange(1, 3)
     if (fortune == 1) {
         light.showRing(
         "green green green green green green green green green green"
