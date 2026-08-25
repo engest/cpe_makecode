@@ -24,5 +24,7 @@ digital-fortune-teller.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_MtxRDwJDH1C0
 
 ### Gadget Step Tracker
+gadget-step-tracker.md
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_JTEKVj4j9bf7
 
 ### The Secret Code Lock
