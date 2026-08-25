@@ -29,7 +29,7 @@ input.onGesture(Gesture.Shake, function () {
 
 ## Step 4: Graph the Progress
 Let's light up the LEDs to show our progress. 
-Open the **LIGHT** drawer, grab the `||light:graph 0 up to 0||` block, and snap it under your variable block. 
+Open the **LIGHT** drawer, grab the `||light:graph 0 ⨁||` block, and snap it under your variable block. Click the ⨁ to make it a `||light:graph 0 up to 0||`.  
 Go to the **VARIABLES** drawer, grab the round `||variables:steps||` block, and drop it into the first `0`. Change the second `0` to `20`. (This means the ring will be completely full when you reach 20 steps!)
 
 ```blocks
