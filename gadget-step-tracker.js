@@ -7,6 +7,3 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
     steps = 0
     light.clear()
 })
-forever(function () {
-	
-})
