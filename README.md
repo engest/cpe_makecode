@@ -27,4 +27,7 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_MtxRDwJDH1C0
 gadget-step-tracker.md
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_JTEKVj4j9bf7
 
+### Digital Level
+https://makecode.com/_02FA0bYvqJpY
+
 ### The Secret Code Lock
