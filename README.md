@@ -31,6 +31,6 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_JTEKVj4j9bf7
 https://makecode.com/_02FA0bYvqJpY
 
 ## Simon Game
-https://makecode.com/_Ybkfex4Aw1Tq
+https://makecode.com/_Um4K46Tqw7Yx
 
 ### The Secret Code Lock
