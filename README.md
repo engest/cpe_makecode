@@ -30,7 +30,10 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_JTEKVj4j9bf7
 ### Digital Level
 https://makecode.com/_02FA0bYvqJpY
 
-## Simon Game
+#### Tortorial
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_1xXVta1hkh6r
+
+### Simon Game
 https://makecode.com/_Um4K46Tqw7Yx
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_bwFgoVFoiey5
-### The Secret Code Lock
+#### The Secret Code Lock
