@@ -89,9 +89,9 @@ function displayBlip (index: number) {
 
 ## Step 5: Make the Pattern Function
 Now let's have the computer invent a secret pattern! Go to the **ADVANCED** section, open the **FUNCTIONS** drawer, and click `Make a Function` and called it `generatePattern` by clicking the text `doSomething` and typing  `generatePattern` in its place.
-Inside it, add a `||variables:set pattern_length to 0||` block and drop a `||math:pick random 0 to 10||` block over the `0`. Change it to pick from `4` to `6`. 
-Open the **CONSOLE** drawer (under **ADVANCED**) and add a `||console:console log value||` block. Name it `"pattern length"` and drop the `||variables:pattern_length||` variable into it. (This lets us peek at the answer in the console!)
-Last, add a `||variables:set pattern to||` block and drop an `||arrays:empty array||` block from the **ARRAYS** drawer into it. This erases any old pattern.
+Inside it, add a `||variables:set pattern_length to 0||` block from the **VARIABLES** drawer, and drop a `||math:pick random 0 to 10||` block from the **MATH** drawer over the `0`. Change the `0` to `10` to `4` to `6`. This will make it pick a random value of 4, 5, or 6 and assign it to the `||variables:pattern_length||` variable, which will be used to determine how long our pattern sequence is. 
+Open the **CONSOLE** drawer (under **ADVANCED**) and add a `||console:console log value||` block. Name it `"pattern length"` and from the **VARIABLES** drawer drop the `||variables:pattern_length||` variable into it. (This lets us peek at the answer in the console!)
+Last, add a `||variables:set pattern to 0||` block from the **VARIABLES** drawer and drop an `||arrays:empty array||` block from the **ARRAYS** drawer into it over the `0`. This sets pattern to be a list and erases any old pattern on repeat runs.
 
 ```blocks
 let pattern: number[] = []
@@ -105,8 +105,8 @@ function generatePattern () {
 
 ## Step 6: Fill the Pattern
 Now we fill our list with random colors.
-Open the **LOOPS** drawer, grab a `||loops:repeat 4 times||` block, and snap it at the bottom of `generatePattern`. Drag the `||variables:pattern_length||` variable over the `4`.
-Inside the loop, `||variables:set index_value||` to a `||math:pick random 0 to 3||`, log it with `||console:console log value||` named `"pattern item"`, and then use the `||arrays:add value to end||` block from the **ARRAYS** drawer to add `||variables:index_value||` to the end of `||variables:pattern||`.
+Open the **LOOPS** drawer, grab a `||loops:repeat 4 times||` block, and snap it at the bottom of `generatePattern` function. Drag the `||variables:pattern_length||` variable over the `4`.
+Inside the loop, `||variables:set index_value||` to a `||math:pick random 0 to 3||`, log it with `||console:console log value||` named `"pattern item"`, and then use the `||arrays:list add value to end||` block from the **ARRAYS** drawer to add `||variables:index_value||` to the end of `||variables:pattern||`, select `||variables:pattern||` from the pull-down list.
 
 ```blocks
 let index_value = 0
@@ -126,8 +126,8 @@ function generatePattern () {
 
 ## Step 7: Show the Pattern
 Make a new function called `showPattern`.
-Open the **LOOPS** drawer and grab the `||loops:for element value of list||` block. Change the variable to `item` and the list to `||variables:pattern||`. 
-Go to the **FUNCTIONS** drawer, grab a `||functions:call displayBlip||` block, put it inside the loop, and drop the `||variables:item||` variable into it.
+Open the **LOOPS** drawer and grab the `||loops:for element value of list||` block and drop it in the `showPattern` function. Change the variable to `item` by right-clicking on `index` and selecting `Rename variable...`. Then change the list of the for loop to `||variables:pattern||` from the **VARIABLES** drawer. 
+Go to the **FUNCTIONS** drawer, grab a `||functions:call displayBlip||` block, put it inside the loop, and drag the `||variables:item||` from the for loop and drop the it over the `1` of the `||functions:call displayBlip` function.
 After the loop, open the **CONTROL** drawer (under **ADVANCED**) and add a `||control:wait 100000 μs||` block for a short pause.
 
 ```blocks
@@ -163,7 +163,7 @@ function displayBlip (index: number) {
 ## Step 8: Wait for the Player
 Now it's the player's turn! Make a new function called `getPlayerInput`.
 First, `||variables:set player_input||` to an `||arrays:empty array||`.
-Then open the **LOOPS** drawer and grab a `||loops:while true||` block. We want to keep listening until the player has tapped as many colors as the pattern. Drop a `||logic:0 ≠ 0||` block over `true` (use the drop-down on a `0 = 0` block to pick `≠`). Put the `||arrays:length of array||` block with `||variables:player_input||` on the left side and `||variables:pattern_length||` on the right side.
+Then open the **LOOPS** drawer and grab a `||loops:while true do||` block. We want to keep listening until the player has tapped as many colors as the pattern. Drop a `||logic:0 ≠ 0||` block over `true` (use the drop-down on a `0 = 0` block to pick `≠`, not equals). From the **ARRAYS** drawer put the `||arrays:length of array||` block with `||variables:player_input||` on the left side of the `||logic:0 ≠ 0||` block, and put `||variables:pattern_length||` on the right side.
 
 ```blocks
 let player_input: number[] = []
@@ -178,7 +178,7 @@ function getPlayerInput () {
 
 ## Step 9: Read the Touch Pads
 Inside the `while` loop, add an `||logic:if true then / else||` block with three `else if` sections and no `else`. 
-For each one, use a `||input:touch A1 is pressed||` block from the **INPUT** drawer, then `||arrays:add value to end||` of `||variables:player_input||` and `||functions:call displayBlip||` with the matching number. Use the chart from the introduction:
+For each one, use a `||input:button A is pressed||` block from the **INPUT** drawer, change `button A` to `touch A4`, `touch A7`, `touch A1`, and `touch A3`. Then open the **ARRAYS** drawer and drag the `||arrays:list add value to end||` inside the if else sections and set the list to `||variables:player_input||` and then from the **FUNCTIONS** drawer drop `||functions:call displayBlip||` under the `||arrays:player_input add value to end||` with the matching number. Use the chart from the introduction:
 
 | Touch Pad | Number |
 | :--- | :--- |
