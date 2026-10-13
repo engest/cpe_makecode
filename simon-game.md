@@ -178,7 +178,7 @@ function getPlayerInput () {
 
 ## Step 9: Read the Touch Pads
 Inside the `while` loop, add an `||logic:if true then / else||` block with three `else if` sections and no `else`. 
-For each one, use a `||input:button A is pressed||` block from the **INPUT** drawer, change `button A` to `touch A4`, `touch A7`, `touch A1`, and `touch A3`. Then open the **ARRAYS** drawer and drag the `||arrays:list add value to end||` inside the if else sections and set the list to `||variables:player_input||` and then from the **FUNCTIONS** drawer drop `||functions:call displayBlip||` under the `||arrays:player_input add value to end||` with the matching number. Use the chart from the introduction:
+For each one, use a `||input:button A is pressed||` block from the **INPUT** drawer, change `button A` to `touch A4`, `touch A7`, `touch A1`, and `touch A3`. Then open the **ARRAYS** drawer and drag the `||arrays:list add value to end||` inside the if else sections and set the list to `||variables:player_input||` and then from the **FUNCTIONS** drawer drop `||functions:call displayBlip||` under the `||arrays:player_input add value to end||` with the matching number. Check the Hint to see the way this should look. Click the (-) for the else part of the if/else block to remove the else section if it is still there. Use the chart from the introduction to know what touch pads to use for the indexes:
 
 | Touch Pad | Number |
 | :--- | :--- |
