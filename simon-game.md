@@ -18,12 +18,15 @@ Our game has four colors. Each color has a touch pad you tap to answer:
 Our game needs to remember a lot of information!
 Go to the **VARIABLES** drawer and click `Make a Variable` to create each of these variables: `pattern_length`, `pattern`, `index_value`, `player_input`, and `result`.
 
+* `pattern_length` will hold the length of the generated pattern.
 * `pattern` will hold the computer's secret list of colors.
+* `index_value` is the index of a particular "side" of the board.
 * `player_input` will hold the list of colors YOU tap.
+* `result` will be the pattern that the user performs.
 
 ## Step 2: Make the Blip Function
 Every time a color shows up, we want to light up two LEDs and play a beep. We will do this a LOT, so let's put it in a function!
-Go to the **ADVANCED** section, open the **FUNCTIONS** drawer, and click `Make a Function`. Click **Number** to add a number parameter and rename it to `index`. Name your function `displayBlip` and click Done.
+Go to the **ADVANCED** section, open the **FUNCTIONS** drawer, and click `Make a Function`. Click **Number** to add a number parameter and rename it to `index` by changing `num` to `index`. Name your function `displayBlip` by clicking on the text `doSomething` and type in `generatePattern` and click Done.
 
 ```blocks
 function displayBlip (index: number) {
@@ -34,7 +37,7 @@ function displayBlip (index: number) {
 ## Step 3: Add the Color Choices
 Our function needs to decide which color to show based on the `index` number.
 Open the **LOGIC** drawer, grab an `||logic:if true then / else||` block, and snap it inside your function. Click the **(+)** plus icon at the bottom of the block until you have `if`, three `else if` sections, and an `else`. Then click the **(-)** minus icon next to the `else` to remove it.
-Grab a `||logic:0 = 0||` block for each `if` and `else if`. Drag the `||variables:index||` parameter from your function block into the first `0`, and set the second number to `0`, `1`, `2`, and `3`.
+From the **LOGIC** drawer, grab a `||logic:0 = 0||` block for each `if` and `else if`. Drag the `||variables:index||` parameter from your function block into the first `0`, and set the second number to `0`, `1`, `2`, and `3`.
 
 ```blocks
 function displayBlip (index: number) {
@@ -51,15 +54,15 @@ function displayBlip (index: number) {
 ```
 
 ## Step 4: Light it Up and Beep!
-For each color, use two `||light:set pixel color at 0 to red||` blocks from the **LIGHT** drawer and one `||music:play tone High C for 1 beat||` block from the **MUSIC** drawer. Click the note and type in the number from the chart below.
+For each color, use two `||light:set pixel color at 0 to red||` blocks from the **LIGHT** drawer and one `||music:play tone at Middle C for 1/2 beat||` block from the **MUSIC** drawer. Click the note and type in the number from the chart below.
 Finally, put a `||light:clear||` block at the *very bottom* of the function (outside of the `if` block) so the lights turn off after each blip.
 
 | Index | Pixels | Color | Tone |
 | :--- | :--- | :--- | :--- |
-| **0** | 0 and 1 | Yellow | 988 |
-| **1** | 3 and 4 | Red | 784 |
-| **2** | 6 and 7 | Green | 660 |
-| **3** | 8 and 9 | Blue | 524 |
+| **0** | 0 and 1 | Yellow | High B (988) |
+| **1** | 3 and 4 | Red | High G (784) |
+| **2** | 6 and 7 | Green | High E (660) |
+| **3** | 8 and 9 | Blue | High C (524) |
 
 ```blocks
 function displayBlip (index: number) {
@@ -85,7 +88,7 @@ function displayBlip (index: number) {
 ```
 
 ## Step 5: Make the Pattern Function
-Now let's have the computer invent a secret pattern! Make a new function called `generatePattern`.
+Now let's have the computer invent a secret pattern! Go to the **ADVANCED** section, open the **FUNCTIONS** drawer, and click `Make a Function` and called it `generatePattern` by clicking the text `doSomething` and typing  `generatePattern` in its place.
 Inside it, add a `||variables:set pattern_length to 0||` block and drop a `||math:pick random 0 to 10||` block over the `0`. Change it to pick from `4` to `6`. 
 Open the **CONSOLE** drawer (under **ADVANCED**) and add a `||console:console log value||` block. Name it `"pattern length"` and drop the `||variables:pattern_length||` variable into it. (This lets us peek at the answer in the console!)
 Last, add a `||variables:set pattern to||` block and drop an `||arrays:empty array||` block from the **ARRAYS** drawer into it. This erases any old pattern.
