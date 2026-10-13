@@ -233,8 +233,8 @@ function displayBlip (index: number) {
 ## Step 10: Check the Answer
 Make a new function called `checkResult`. We will count the mistakes in the `result` variable.
 Start with `||variables:set result to 0||`. Then grab a `||loops:for index from 0 to 4||` block from the **LOOPS** drawer and drag `||variables:pattern_length||` over the `4`.
-Inside the loop, add an `||logic:if true then / else||` block. Compare two `||arrays:get value at||` blocks from the **ARRAYS** drawer: `||variables:player_input||` at `||variables:index||` **=** `||variables:pattern||` at `||variables:index||`. 
-If they match, set `result` to `result + 0` (no mistake). Else, set `result` to `result + 1` (one more mistake!).
+Inside the loop, add an `||logic:if true then / else||` block. Replace the `true` with a `||logic:0 = 0||`  and replace the `0`s to compare two `||arrays:list get value at||` blocks from the **ARRAYS** drawer where the first list is replaced with `||variables:player_input||` with value at `||variables:index||`, and likewise the other side of the **=** should use the list `||variables:pattern||` with the value at `||variables:index||` as well.
+If it is `TRUE` that they match (within the if area, using `||variables:set result to 0|| from the **VARIABLES** drawer` set `result` to `result + 0` (which means no mistake). Else, in the same way (within the else area) set `result` to `result + 1` (as in one more mistake!).
 
 ```blocks
 let pattern: number[] = []
