@@ -54,8 +54,8 @@ function displayBlip (index: number) {
 ```
 
 ## Step 4: Light it Up and Beep!
-For each color, use two `||light:set pixel color at 0 to red||` blocks from the **LIGHT** drawer and one `||music:play tone at Middle C for 1/2 beat||` block from the **MUSIC** drawer. Click the note and type in the number from the chart below.
-Finally, put a `||light:clear||` block at the *very bottom* of the function (outside of the `if` block) so the lights turn off after each blip.
+For each color, use two `||light:set pixel color at 0 to red||` blocks from the **LIGHT** drawer and one `||music:play tone at Middle C for 1/2 beat||` block from the **MUSIC** drawer. Click the note and type in the number from the chart below. Make sure to set each one to 1 beat.
+Finally, put a `||light:clear||` from the **LIGHT** `||light:**LIGHT**||` drawer block at the *very bottom* of the function (outside of the `if` block) so the lights turn off after each blip.
 
 | Index | Pixels | Color | Tone |
 | :--- | :--- | :--- | :--- |
@@ -90,7 +90,7 @@ function displayBlip (index: number) {
 ## Step 5: Make the Pattern Function
 Now let's have the computer invent a secret pattern! Go to the **ADVANCED** section, open the **FUNCTIONS** drawer, and click `Make a Function` and called it `generatePattern` by clicking the text `doSomething` and typing  `generatePattern` in its place.
 Inside it, add a `||variables:set pattern_length to 0||` block from the **VARIABLES** drawer, and drop a `||math:pick random 0 to 10||` block from the **MATH** drawer over the `0`. Change the `0` to `10` to `4` to `6`. This will make it pick a random value of 4, 5, or 6 and assign it to the `||variables:pattern_length||` variable, which will be used to determine how long our pattern sequence is. 
-Open the **CONSOLE** drawer (under **ADVANCED**) and add a `||console:console log value||` block. Name it `"pattern length"` and from the **VARIABLES** drawer drop the `||variables:pattern_length||` variable into it. (This lets us peek at the answer in the console!)
+Open the **>_ CONSOLE** drawer (under **ADVANCED**) and add a `||console:console log value||` block. Name it `"pattern length"` and from the **VARIABLES** drawer drop the `||variables:pattern_length||` variable over the `0`. (This lets us peek at the answer in the console!)
 Last, add a `||variables:set pattern to 0||` block from the **VARIABLES** drawer and drop an `||arrays:empty array||` block from the **ARRAYS** drawer into it over the `0`. This sets pattern to be a list and erases any old pattern on repeat runs.
 
 ```blocks
@@ -106,7 +106,7 @@ function generatePattern () {
 ## Step 6: Fill the Pattern
 Now we fill our list with random colors.
 Open the **LOOPS** drawer, grab a `||loops:repeat 4 times||` block, and snap it at the bottom of `generatePattern` function. Drag the `||variables:pattern_length||` variable over the `4`.
-Inside the loop, `||variables:set index_value||` to a `||math:pick random 0 to 3||`, log it with `||console:console log value||` named `"pattern item"`, and then use the `||arrays:list add value to end||` block from the **ARRAYS** drawer to add `||variables:index_value||` to the end of `||variables:pattern||`, select `||variables:pattern||` from the pull-down list.
+Inside the loop, place a `||variables:set index_value to 0||` from the **VARIABLES** drawer and then from the **MATH** drawer drop a `||math:pick random 0 to 10||` over the `0` and change it the `10` to a `3`. Now let's log the random index item that will go into the pattern by opening the **>_ CONSOLE** and adding `||console:console log value||` after the `||variables:set index_value to pick random 0 to 10||`. In the quotes give it the label `"pattern item"` and for the value, go to the **VARIABLES** drawer and drag index_value over the `0`. Now to add the random index_value to our pattern, use the `||arrays:list add value to end||` block from the **ARRAYS** drawer to add `||variables:index_value||` to the end of `||variables:pattern||` (select `||variables:pattern||` from the pull-down list.)
 
 ```blocks
 let index_value = 0
@@ -126,9 +126,9 @@ function generatePattern () {
 
 ## Step 7: Show the Pattern
 Make a new function called `showPattern`.
-Open the **LOOPS** drawer and grab the `||loops:for element value of list||` block and drop it in the `showPattern` function. Change the variable to `item` by right-clicking on `index` and selecting `Rename variable...`. Then change the list of the for loop to `||variables:pattern||` from the **VARIABLES** drawer. 
-Go to the **FUNCTIONS** drawer, grab a `||functions:call displayBlip||` block, put it inside the loop, and drag the `||variables:item||` from the for loop and drop the it over the `1` of the `||functions:call displayBlip` function.
-After the loop, open the **CONTROL** drawer (under **ADVANCED**) and add a `||control:wait 100000 μs||` block for a short pause.
+Open the **LOOPS** drawer and grab the `||loops:for element value of list||` block and drop it in the `showPattern` function. We are going to let it keep the default element variable named `value`. But change the list of the for loop to `||variables:pattern||` by pulling down the list and selecting `pattern`. Alternatively, you can drag `||variables:pattern||` from the **VARIABLES** drawer and drop in on `list`. 
+Now go to the **FUNCTIONS** drawer, grab a `||functions:call displayBlip||` block, put it inside the loop, and drag the `||variables:value||` from the for loop and drop the it over the `1` of the `||functions:call displayBlip||` function.
+After the loop, at the bottom of the `showPattern` function, open the **CONTROL** drawer (under **ADVANCED**) and add a `||control:wait 4 μs||`, changing the `4` to `100000` block for a short pause.
 
 ```blocks
 let pattern: number[] = []
@@ -162,8 +162,8 @@ function displayBlip (index: number) {
 
 ## Step 8: Wait for the Player
 Now it's the player's turn! Make a new function called `getPlayerInput`.
-First, `||variables:set player_input||` to an `||arrays:empty array||`.
-Then open the **LOOPS** drawer and grab a `||loops:while true do||` block. We want to keep listening until the player has tapped as many colors as the pattern. Drop a `||logic:0 ≠ 0||` block over `true` (use the drop-down on a `0 = 0` block to pick `≠`, not equals). From the **ARRAYS** drawer put the `||arrays:length of array||` block with `||variables:player_input||` on the left side of the `||logic:0 ≠ 0||` block, and put `||variables:pattern_length||` on the right side.
+First, drag `||variables:set player_input to 0||` from the **VARIABLES** drawer into the `getPlayerInput` function and from the **ARRAYS** drawer drag a `||arrays:empty array||` over the `0`.
+Then open the **LOOPS** drawer and grab a `||loops:while true do||` block. We want to keep listening until the player has tapped as many colors as the pattern. Inside the loop, from the **LOGIC** drawer, drop a `||logic:0 ≠ 0||` block over `true` of the while loop (use the drop-down on a `0 = 0` block to pick `≠`, not equals). From the **ARRAYS** drawer put the `||arrays:length of array||` block with `||variables:player_input||` on the left side of the `||logic:0 ≠ 0||` block, and put `||variables:pattern_length||` on the right side.
 
 ```blocks
 let player_input: number[] = []
@@ -178,7 +178,7 @@ function getPlayerInput () {
 
 ## Step 9: Read the Touch Pads
 Inside the `while` loop, add an `||logic:if true then / else||` block with three `else if` sections and no `else`. 
-For each one, use a `||input:button A is pressed||` block from the **INPUT** drawer, change `button A` to `touch A4`, `touch A7`, `touch A1`, and `touch A3`. Then open the **ARRAYS** drawer and drag the `||arrays:list add value to end||` inside the if else sections and set the list to `||variables:player_input||` and then from the **FUNCTIONS** drawer drop `||functions:call displayBlip||` under the `||arrays:player_input add value to end||` with the matching number. Check the Hint to see the way this should look. Click the (-) for the else part of the if/else block to remove the else section if it is still there. Use the chart from the introduction to know what touch pads to use for the indexes:
+For each one, place a `||input:button A is pressed||` block from the **INPUT** drawer over the empty hexagon, change `button A` to `touch A4`, `touch A7`, `touch A1`, and `touch A3`. Then open the **ARRAYS** drawer and drag the `||arrays:list add value to end||` inside the if else sections and set the list to `||variables:player_input||` for each one. To set the value for each one, open the **MATH** drawer and drag the `||math:0||` item into the empty oval of the `||arrays:list add value to end||` block, setting the values 0, 1, 3, and 3. Next, from the **FUNCTIONS** drawer drop `||functions:call displayBlip||` under the `||arrays:player_input add value to end||` of each `if/else-if` section, setting the `1` with the matching number as we put in the block above it. Check the Hint to see the way this should look. Click the (-) for the else part of the if/else block to remove the else section if it is still there. Use the chart from the introduction to know what touch pads to use for the indexes:
 
 | Touch Pad | Number |
 | :--- | :--- |
@@ -233,8 +233,8 @@ function displayBlip (index: number) {
 ## Step 10: Check the Answer
 Make a new function called `checkResult`. We will count the mistakes in the `result` variable.
 Start with `||variables:set result to 0||`. Then grab a `||loops:for index from 0 to 4||` block from the **LOOPS** drawer and drag `||variables:pattern_length||` over the `4`.
-Inside the loop, add an `||logic:if true then / else||` block. Replace the `true` with a `||logic:0 = 0||`  and replace the `0`s to compare two `||arrays:list get value at||` blocks from the **ARRAYS** drawer where the first list is replaced with `||variables:player_input||` with value at `||variables:index||`, and likewise the other side of the **=** should use the list `||variables:pattern||` with the value at `||variables:index||` as well.
-If it is `TRUE` that they match (within the if area, using `||variables:set result to 0|| from the **VARIABLES** drawer` set `result` to `result + 0` (which means no mistake). Else, in the same way (within the else area) set `result` to `result + 1` (as in one more mistake!).
+Inside the loop, add an `||logic:if true then / else||` block. Replace the `true` with a `||logic:0 = 0||`  and replace the `0`s to compare two `||arrays:list get value at||` blocks from the **ARRAYS** drawer where the first list is replaced with `||variables:player_input||`. Drag the `||variables:index||` from the for loop and drop it over the `0` of both `||arrays:list get value at||` blocks. Likewise the other side of the **=** the `||arrays:list get value at||` should use the list `||variables:pattern||`. Make sure to compare with the hint diagram.
+If it is `TRUE` that they match (within the `if` area, using `||variables:set result to 0||` from the **VARIABLES** drawer set `result` to `result + 0` (which means no mistake). In order to put `result + 0` on the right side, we need to go to the **MATH** drawer and drag the `0 + 0` block and drop it on the `0`. Then we need to go to the **VARIABLES** drawer and drop `||variables:result||` over the first `0` and leave the second `0` as `0`. In the `else` area, in the same way set `result` to `result + 1` (as in one more mistake!).
 
 ```blocks
 let pattern: number[] = []
@@ -254,9 +254,9 @@ function checkResult () {
 ```
 
 ## Step 11: Win or Lose!
-Under the loop, add another `||logic:if true then / else||` block that checks if `||variables:result||` **=** `0`.
-* **If you win:** Grab a `||control:run in parallel||` block from the **CONTROL** drawer. Inside it, play the **ba ding** sound and show the **rainbow** animation for **500 ms**. After it, add a `||control:wait 3000000 μs||` block.
-* **Else (you lose):** Use another `||control:run in parallel||` block with the **wawawawaa** sound and a red `||light:show ring||`. Add a `||control:wait 3000000 μs||` block after it.
+Still within the `||functions:checkResult||` function, under the loop, add another `||logic:if true then / else||` block that checks if `||variables:result||` **=** `0`. Remember, we need to go to the **LOGIC** drawer and drop in a `||logic:0 = 0||` block over the `true` after the `if`, and then inside that we need to drop the `||variables:result||` variable on the left `0` and leave the right side as `0`. This means no errors! A win! But if this is not true, if `||variables:result||` is more than `0` (the `else`) then that is a loss.
+* **If you win:** Within the `if` area, drop a `||control:run in parallel||` block from the **CONTROL** drawer. Inside it, from the **MUSIC** dawer drop a `||music:play sound ba ding||` to play the **ba ding** sound and right after that, from the **LIGHT** drawer drop in `||light:show animation for 500 ms||` to show the **rainbow** animation for **500 ms**. After the `||control:run in parallel||`, add a `||control:wait 3000000 μs||` block.
+* **Else (you lose):** Within the `else` area, use another `||control:run in parallel||` block likewie, within it place a red `||light:show ring||` and the **wawawawaa** sound. After the `||control:run in parallel||`, add a `||control:wait 3000000 μs||` block.
 
 Finally, at the very bottom of the function, add a `||light:clear||` block and a `||control:wait 2000000 μs||` block so the player can get ready for the next round.
 
