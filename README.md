@@ -35,5 +35,8 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_1xXVta1hkh6r
 
 ### Simon Game
 https://makecode.com/_Um4K46Tqw7Yx
+
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_6LC3JxcceFsb
-#### The Secret Code Lock
+
+### UART Communicator
+https://makecode.com/_Wez9LaKR6A5b
