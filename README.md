@@ -39,4 +39,4 @@ https://makecode.com/_Um4K46Tqw7Yx
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_6LC3JxcceFsb
 
 ### UART Communicator
-https://makecode.com/_9RXRx9LoADpf
+https://makecode.com/_UAz4gJM26Fqh
