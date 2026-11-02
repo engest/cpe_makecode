@@ -48,3 +48,13 @@ https://makecode.com/_hgjawvdRdi8j
 
 #### Tutorial
 https://makecode.adafruit.com/#tutorial:https://makecode.com/_DPaYz18Jx2w9
+
+### IR Laser Tag
+
+#### Project
+https://makecode.com/_FpX09fM5T7a2
+
+#### Tutorial
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_6vig6D3rjeCs
+##### YellKey Link
+yellkey.com/victim
