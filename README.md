@@ -40,3 +40,11 @@ https://makecode.adafruit.com/#tutorial:https://makecode.com/_6LC3JxcceFsb
 
 ### UART Communicator
 https://makecode.com/_UAz4gJM26Fqh
+
+### IR Laser Virus Tag
+
+#### Project
+https://makecode.com/_hgjawvdRdi8j
+
+#### Tutorial
+https://makecode.adafruit.com/#tutorial:https://makecode.com/_DPaYz18Jx2w9
